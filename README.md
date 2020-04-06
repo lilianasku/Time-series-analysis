@@ -16,6 +16,7 @@ Figure 1:
 <img src="Images/AnnualRainfallAuckland.png">
 
 Figure 2: 
+
 <img src="Images/WeeklyRainfallAuckland.png">
 
 
