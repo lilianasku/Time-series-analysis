@@ -1,4 +1,4 @@
-# Time-series-analysis-of-data
+# Time_series_analysis
 Repository for data analysis and visualization of time series data
 
 ## Time series analysis of rainfall data in Auckland
