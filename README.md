@@ -19,5 +19,6 @@ Figure 2:
 
 <img src="Images/WeeklyRainfallAuckland.png">
 
+Basic Statistics:
 
-
+<img src="Images/Stats.pdf">
