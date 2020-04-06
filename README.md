@@ -1,7 +1,7 @@
 # Time-series-analysis-of-data
 Repository for data analysis and visualization of time series data
 
-#Time series analysis of rainfall data in Auckland
+# Time series analysis of rainfall data in Auckland
 
 I am exploring here rainfall data in Auckland between 1872 and 2011, using a set of tables published on the Auckland Council website: https://environmentauckland.org.nz/Data/DataSet/Summary/Location/A64871M/DataSet/Rainfall/Continuous/Interval/Latest. 
 Five tables (in /Data/ folder) contain the amount of rain in millimetres, measured at two different locations: Mt Albert and City centre. The tables cover various time intervals starting from 6 years to 140 years, and they include both measured values and synthesized data.
@@ -19,7 +19,7 @@ This is one way of presenting and analysing time-series data. We can also includ
 
 <img src="Images/WeeklyRainfallAuckland.png">
 
-#**Basic Statistics:**
+***Basic Statistics:***
 
 Number of rows: 31652
 
