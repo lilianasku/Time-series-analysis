@@ -13,5 +13,5 @@ This is one way of presenting and analysing time-series data. We can also includ
 
 Figure1:
 
-<img src*"Images/AnnualRainfallAuckland.png>
+<img src"Images/AnnualRainfallAuckland.png>
 ![](Images/WeeklyRainfallAuckland.png)
