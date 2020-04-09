@@ -39,7 +39,7 @@ Number of days with rainfall of less than 1mm/day: 18246 --- 58%
 
 Dates with the maximum rainfalls:
 
-timestamp           rain_value
+timestamp           rain_value(mm)
 
 1936-02-02           162.05
 
