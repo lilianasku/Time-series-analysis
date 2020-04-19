@@ -13,9 +13,9 @@ This is one way of presenting and analysing time-series data. We can also includ
 
 ##### Figure 1
 <p>
-<img src="Images/AnnualRainfallAuckland.png" width="240" height="260">
-
-<img src="Images/WeeklyRainfallAuckland.png" width="240" height="260">
+<img src="Images/AnnualRainfallAuckland.png" width="600" height="400">
+##### Figure 2
+<img src="Images/WeeklyRainfallAuckland.png" width="600" height="400">
 </p>
 
 ### Basic Statistics:
