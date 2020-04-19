@@ -20,19 +20,15 @@ This is one way of presenting and analysing time-series data. We can also includ
 ### Basic Statistics:
 
 - Number of rows: 31652
-- Start date: 1872-01-03 00:00:00 --- End date: 1997-09-30 08:30:00
+- Start date: 1872-01-03 00:00:00  
+- End date: 1997-09-30 08:30:00
 - Number of measurements: 31652
 - Number of unique dates: 31652
-
-Number of days bewteen the first and the last measurements: 45926
-
-Number of days with no measurements: 14274
-
-Number of days with no rain: 8473 --- 27%
-
-Number of days with rainfall of less than 1mm/day: 18246 --- 58%
-
-Dates with the maximum rainfalls:
+- Number of days bewteen the first and the last measurements: 45926
+- Number of days with no measurements: 14274
+- Number of days with no rain: 8473 --- 27%
+- Number of days with rainfall of less than 1mm/day: 18246 --- 58%
+- Dates with the maximum rainfalls:
 
 timestamp           rain_value(mm)
 
