@@ -29,11 +29,18 @@ This is one way of presenting and analysing time-series data. We can also includ
 - Number of days with no rain: 8473 --- 27%
 - Number of days with rainfall of less than 1mm/day: 18246 --- 58%
 - Dates with the maximum rainfalls:
-
-timestamp           rain_value(mm)
-
-1936-02-02            162.05
-
+<table>
+  <thead>
+    <tr>  
+      <th>timestamp</th>           
+      <th>rain_value(mm)</th>
+    </tr>
+  </thead>
+  <tbody>
+   </tr>
+      <td>1936-02-02   </td>
+      <td> 162.05 </td>
+   </tr>
 1985-05-23            156.60
 
 1979-02-18            142.20
@@ -41,4 +48,6 @@ timestamp           rain_value(mm)
 1917-02-04            140.72
 
 1989-08-26            133.30
-
+</tr>
+</tbody>
+</table>
