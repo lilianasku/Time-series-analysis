@@ -41,8 +41,10 @@ This is one way of presenting and analysing time-series data. We can also includ
       <td>1936-02-02   </td>
       <td> 162.05 </td>
    </tr>
-1985-05-23            156.60
-
+   <tr>
+      <td>1985-05-23    </td>
+      <td> 156.60   </td>
+   </tr>
 1979-02-18            142.20
 
 1917-02-04            140.72
