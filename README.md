@@ -11,10 +11,9 @@ After importing data from the AucklandRainfall1872-1997.csv table, the software 
 
 This is one way of presenting and analysing time-series data. We can also include data from other tables and use Jupyter Notebook and Python Bokeh library for more interactive visualization.
 
-##### Figure 1
+##### Figures
 <p>
 <img src="Images/AnnualRainfallAuckland.png" width="600" height="400">
-##### Figure 2
 <img src="Images/WeeklyRainfallAuckland.png" width="600" height="400">
 </p>
 
