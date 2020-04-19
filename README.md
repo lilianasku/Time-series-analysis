@@ -13,8 +13,8 @@ This is one way of presenting and analysing time-series data. We can also includ
 
 ##### Figures
 <p>
-<img src="Images/AnnualRainfallAuckland.png" width="450" height="300">
-<img src="Images/WeeklyRainfallAuckland.png" width="450" height="300">
+<img src="Images/AnnualRainfallAuckland.png" width="450" height="350">
+<img src="Images/WeeklyRainfallAuckland.png" width="450" height="350">
 </p>
 
 ### Basic Statistics:
