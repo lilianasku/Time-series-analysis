@@ -45,11 +45,17 @@ This is one way of presenting and analysing time-series data. We can also includ
       <td>1985-05-23    </td>
       <td> 156.60   </td>
    </tr>
-1979-02-18            142.20
-
-1917-02-04            140.72
-
-1989-08-26            133.30
-</tr>
+   <tr>
+  <td> 1979-02-18  </td>
+  <td> 142.20   </td>
+   </tr>
+   <tr>
+     <td> 1917-02-04 </td>
+     <td> 140.72 </td>
+   </tr>
+   <tr>
+  <td> 1989-08-26 </td>
+  <td> 133.30</td>
+   </tr>
 </tbody>
 </table>
