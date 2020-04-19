@@ -19,13 +19,10 @@ This is one way of presenting and analysing time-series data. We can also includ
 
 ### Basic Statistics:
 
-Number of rows: 31652
-
-Start date: 1872-01-03 00:00:00 --- End date: 1997-09-30 08:30:00
-
-Number of measurements: 31652
-
-Number of unique dates: 31652
+-- Number of rows: 31652
+-- Start date: 1872-01-03 00:00:00 --- End date: 1997-09-30 08:30:00
+-- Number of measurements: 31652
+-- Number of unique dates: 31652
 
 Number of days bewteen the first and the last measurements: 45926
 
