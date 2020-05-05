@@ -1,115 +1,109 @@
-#Time series analysis of rainfall data in Auckland between 1872 and 1997
-import os
+#Basic Stats of time series rainfall data in Auckland between 1872 and 1997
+import sys
 import numpy as np
 import pandas as pd
 from pandas import datetime
 import matplotlib.pyplot as plt
-import seaborn as snb
-snb.set()
 
-#Reading input file
-def read_input(file):
-   try:
-      with open(file, 'r') as input_file:
-         return (pd.read_csv(file,
-                             skiprows=3,
-                             header=None,
-                             names=['timestamp','rain_value', 'grade', 'interpol_type', 'event_timestamp'],
-                             parse_dates=['timestamp'],
-                             index_col='timestamp'
-                             ))
-   except IOError:
-      print("File not found or path is incorrect")
+class RainFall:
 
-#Exploring stats of rainfall data
-def rain_days_numbers(dataf):
-    print('Basic statistics:', '\n')
+    def __init__(self,inputfile):
+        self.inputfile = inputfile
 
-    start=min(dataf.index)
-    end=max(dataf.index)
-    print('Start date:', start, '--- End date:', end)
-    unique_date=len(dataf.index.unique())
-    day_num=dataf.shape[0]
-    print('Number of measurements:', day_num)
-    print('Number of unique dates:', unique_date)
+    def read_input(self):
+        try:
+            with open(self.inputfile, 'r') as input_file:
+                 self.input_data = pd.read_csv(self.inputfile,
+                                 skiprows=3,
+                                 header=None,
+                                 names=['timestamp','rain_value', 'grade', 'interpol_type', 'event_timestamp'],
+                                 parse_dates=['timestamp'],
+                                 index_col='timestamp')
+                 return self.input_data
+        except IOError:
+                print("File not found or path is incorrect")
+                sys.exit()
 
-    delta=max(dataf.index)-min(dataf.index)
-    print('Number of days between the first and last measurements:',  delta.days)
-    print('Number of days with no measurements:', (delta.days-day_num), '\n')
+    def clean_data(self):
+        row_number=self.input_data.shape[0]
+        print('Number of rows:', row_number)
+        print(self.input_data.describe())
+        self.new_df=self.input_data.drop(columns=['event_timestamp', 'grade', 'interpol_type'])
+        return self.new_df
 
-    rain_days= dataf['rain_value'].value_counts(dropna=True, sort=True)
-    print('Number of days with no rain:', rain_days[0], '---', round(rain_days[0]/day_num *100, 0),'%')
+    def data_stats(self):
+        print('Basic statistics:', '\n')
 
-    y=list(filter(lambda x: x <= 1, rain_days.index))
-    little_rain=rain_days.values[0:14].sum()
-    print('Number of days with rain, less than 1mm/day:', little_rain, '---', round(little_rain/day_num*100, 0), '%', '\n')
+        start=min(self.new_df.index)
+        end=max(self.new_df.index)
+        print('Start date:', start, '--- End date:', end)
+        unique_date=len(self.new_df.index.unique())
+        day_num=self.new_df.shape[0]
+        print('Number of measurements:', day_num)
+        print('Number of unique days:', unique_date)
 
-    df_sorted=dataf.sort_values(by='rain_value', ascending=False)
-    print('Dates with the maximum rain falls:', df_sorted.head(5))
+        delta=max(self.new_df.index)-min(self.new_df.index)
+        print('Number of days between the first and last measurements:',  delta.days)
+        print('Number of days with no measurements:', (delta.days-day_num), '\n')
+
+        rain_days= self.new_df['rain_value'].value_counts(dropna=True, sort=True)
+        print('Number of days with no rain:', rain_days[0], '---', round(rain_days[0]/day_num *100, 0),'%')
+
+        y=list(filter(lambda x: x <= 1, rain_days.index))
+        little_rain=rain_days.values[0:14].sum()
+        print('Number of days with rain, less than 1mm/day:', little_rain, '---', round(little_rain/day_num*100, 0), '%', '\n')
+
+        df_sorted=self.new_df.sort_values(by='rain_value', ascending=False)
+        print('Dates with the maximum rain falls:','\n')
+        print(df_sorted.head(5))
 
 
 def main():
    filename='Data/AucklandRainfall1872-1997.csv'
    print('Reading file ', filename, '...\n')
-   df= read_input(filename)
 
-   #exploring & cleaning data
-   row_number=df.shape[0]
-   print('Number of rows:', row_number)
+   rain_data=RainFall(filename)
+   df = rain_data.read_input()
+   print(df.head(5))
 
-   print('Dropping empty columns...')
-   missing_number=df.event_timestamp.value_counts(dropna=False)
-   #"'event_timestamp' column does not have values: missing_number == row_number)
-   df=df.drop(columns=['event_timestamp', 'grade', 'interpol_type'])
-   print(df.head(5), '\n')
+   #Cleaning data
+   print('Dropping unnecessary columns...')
+   new_df=rain_data.clean_data()
+   print(new_df.head(5), '\n')
 
-   rain_days_numbers(df)
+   #Data stats
+   rain_data.data_stats()
 
-   print("Plotting data...")
+   print("Plotting data...\n")
 
-   ax=plt.subplot(2,1,1)
-   df['rain_value'].plot(kind='line', color='blue')
-   plt.xlabel('Year')
-   plt.ylabel('Rainfall (mm)')
-   plt.title('Rainfall in Auckland')
-   plt.grid(True)
+   fig,ax = plt.subplots(2,1)
+   ax[0].plot(df.index, df['rain_value'], color='blue')
+   ax[0].set(xlabel='Year',
+          ylabel='Rainfall (mm)',
+          title='Rainfall in Auckland')
 
-   ax=plt.subplot(2,1,2)
    df_year=df.resample('Y').mean()
-   df_year['rain_value'].plot(kind='line', color='green')
-   df_year['rain_value'].rolling(2,center=True).mean().plot(style=['--'], color='red')
-   plt.xlabel('Year')
-   plt.ylabel('Rainfall (mm)')
-   plt.title('Mean annual rainfall in Auckland')
-   plt.grid(b=True, which='major', linestyle='-')
-   plt.minorticks_on()
-   plt.grid(b=True, which='minor', linestyle='-')
+   ax[1].plot(df_year.index, df_year['rain_value'], color='green')
+   ax[1].set(xlabel='Year',
+       ylabel='Rainfall (mm)',
+       title='Mean annual rainfall in Auckland')
    plt.tight_layout()
    plt.show()
 
-   plt.figure()
-   ax=plt.subplot(2,1,1)
+   fig,ax = plt.subplots(2,1)
+   df_new2=df.groupby(df.index.week).median()
+   ax[0].bar(df_new2.index, df_new2['rain_value'], color='green')
+   ax[0].set(xlabel='Months',
+             ylabel='Rainfall (mm)',
+             title='Median weekly rainfall in Auckland')
+
    df_new=df.groupby(df.index.month).median()
    months=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
    df_new.index=months
-   df_new['rain_value'].plot(kind='line', color='blue', )
-   plt.xlabel('Months')
-   plt.ylabel('Rainfall (mm)')
-   plt.title('Median monthly rainfall in Auckland between 1872 and 1997')
-   plt.grid(b=True, which='major', linestyle='-')
-   plt.minorticks_on()
-   plt.grid(b=True, which='minor', linestyle='-')
-
-   ax=plt.subplot(2,1,2)
-   df_new2=df.groupby(df.index.week).median()
-   df_new2['rain_value'].plot(kind='bar', color='green', grid='months')
-   plt.xticks([ ])
-   plt.xlabel('Jan      Feb      Mar    Apr    May   Jun   Jul   Aug    Sep    Oct      Nov    Dec')
-   plt.ylabel('Rainfall (mm)')
-   plt.title('Median weekly rainfall over period of 125 years')
-   plt.grid(b=True, which='major', linestyle='-')
-   plt.minorticks_on()
-   plt.grid(b=True, which='minor', linestyle='-')
+   ax[1].plot(df_new.index, df_new['rain_value'], color='blue', )
+   ax[1].set(xlabel='Months',
+          ylabel='Rainfall (mm)',
+          title='Median monthly rainfall in Auckland between 1872 and 1997')
    plt.tight_layout()
    plt.show()
 
