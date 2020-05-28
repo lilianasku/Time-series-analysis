@@ -7,3 +7,4 @@ Repository for data analysis and visualization of time series data
 <img src="Images/rainfall.jpg" width="900" height="500">
 </p>
 
+#### 2. Variable star light curves
