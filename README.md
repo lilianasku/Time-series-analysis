@@ -13,4 +13,6 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 <img src="images/rainfall.jpg" width="900" height="500">
 </p>
 
+Notebooks for exploring rainfall data are:
+
 #### 2. Variable stars light curves
