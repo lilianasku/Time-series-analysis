@@ -14,6 +14,6 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 </p>
 
 Notebooks for exploring rainfall data:
-<li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/Knn-and-XGBoost.ipynb"> Knn-and-XGBoost.ipynb </a>
+<li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_EDA.ipynb"> RainfallAuckland_EDA.ipynb </a>
 
 #### 2. Variable stars light curves
