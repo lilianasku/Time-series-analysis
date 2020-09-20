@@ -13,6 +13,7 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 <img src="images/rainfall.jpg" width="900" height="500">
 </p>
 
-Notebooks for exploring rainfall data are:
+Notebooks for exploring rainfall data:
+<li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/Knn-and-XGBoost.ipynb"> Knn-and-XGBoost.ipynb </a>
 
 #### 2. Variable stars light curves
