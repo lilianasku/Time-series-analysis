@@ -13,8 +13,8 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 <img src="images/rainfall.jpg" width="900" height="500">
 </p>
 
-Notebooks for exploring rainfall data:
-<li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_EDA.ipynb"> RainfallAuckland_EDA.ipynb </a>
+Notebooks:
+<li> Exploratory data analysis: <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_EDA.ipynb"> RainfallAuckland_EDA.ipynb </a>
 <li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_SeasonalChanges.ipynb"> RainfallAuckland_SeasonalChanges.ipynb </a>
   
 #### 2. Variable stars light curves
