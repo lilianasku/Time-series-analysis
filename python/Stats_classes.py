@@ -1,8 +1,9 @@
 #Stats functions and classes
-
 import sys
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 #functon for creating n_samples list of bootstraps
 def create_bootstraps(data_list, n_samples=1):
@@ -19,6 +20,12 @@ def create_one_bootstrap(data_list, function):
     bs=np.random.choice(data_list, size=len(data_list))
     return function(bs)
 
+#calculating empirical cumulative distribution ecdf
+def calculate_ecdf(data):
+    n=len(data)
+    x=np.sort(data)
+    y=np.arange(1,len(x)+1)/n
+    return x,y
 
 def main():
    l=[2,4,7,8]
