@@ -32,6 +32,16 @@ def plot_ecdf(x,y):
     plt.title('Empirical cumulative distribution')
     plt.show()
 
+def overplot_percentile(x,y):
+    percentile= np.array ([2.5, 25, 50, 75])
+    per=np.percentile(x, percentile)
+    plt.plot(x,y, marker='.', linestyle='none')
+    plt.plot(per, percentile/100, marker='D', color='red', linestyle='none')
+    plt.xlabel('xaxis')
+    plt.ylabel('ECDF')
+    plt.title('Empirical cumulative distribution')
+    plt.show()
+
 def main():
    test_list=[2,4,7,8]
    assert len(test_list)!=0, 'Empty list'
@@ -39,9 +49,10 @@ def main():
    results=list(create_bootstraps(test_list,3))
    result= create_one_bootstrap(test_list,np.mean)
 
-   ecdf=calculate_ecdf(test_list)
+   x,y=calculate_ecdf(test_list)
    print(result)
-   print(ecdf)
+   print(x,y)
+   overplot_percentile(x,y)
 
 if __name__=="__main__":
     main()
