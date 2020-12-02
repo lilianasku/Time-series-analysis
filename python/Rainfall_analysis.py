@@ -1,10 +1,10 @@
-#Basic analysis of time series Auckland rainfall data
+#Basic analysis of time series rainfall data
 import sys
 import numpy as np
 import pandas as pd
 from pandas import datetime
 
-class RainFall:
+class RainFall(object):
 
     def __init__(self, inputfile):
         self.inputfile = inputfile
@@ -31,26 +31,27 @@ class RainFall:
         return self.new_df
 
     def data_stats(self):
-        print('Basic statistics:', '\n')
-
         start = min(self.new_df.index)
         end = max(self.new_df.index)
         print('Start date:', start, '--- End date:', end)
+        self.day_num = self.new_df.shape[0]
+        print('Number of measurements:', self.day_num, '\n')
+
+    def number_days(self):
         unique_date = len(self.new_df.index.unique())
-        day_num = self.new_df.shape[0]
-        print('Number of measurements:', day_num)
         print('Number of unique days:', unique_date)
 
         delta = max(self.new_df.index)- min(self.new_df.index)
-        print('Number of days between the first and last measurements:',  delta.days)
-        print('Number of days with no measurements:', (delta.days-day_num), '\n')
+        print('Days between the first and the last measurement:',  delta.days)
+        print('Days with no measurements:', (delta.days-self.day_num), '\n')
 
+    def rain_days(self):
         rain_days = self.new_df['rain_value'].value_counts(dropna=True, sort=True)
-        print('Number of days with no rain:', rain_days[0], '---', round(rain_days[0]/day_num *100, 0),'%')
+        print('Days with no rain:', rain_days[0], '---', round(rain_days[0]/self.day_num *100, 0),'%')
 
         y = list(filter(lambda x: x <= 1, rain_days.index))
         little_rain = rain_days.values[0:14].sum()
-        print('Number of days with rain, less than 1mm/day:', little_rain, '---', round(little_rain/day_num*100, 0), '%', '\n')
+        print('Days with rain, less than 1mm/day:', little_rain, '---', round(little_rain/self.day_num*100, 0), '%', '\n')
 
         df_sorted = self.new_df.sort_values(by = 'rain_value', ascending = False)
         print('Dates with the maximum rain falls:','\n')
@@ -58,21 +59,25 @@ class RainFall:
 
 
 def main():
-   filename = 'Data/AucklandRainfall1872-1997.csv'
+   filename = '../Data/AucklandRainfall1872-1997.csv'
    print('Reading file ', filename, '...\n')
 
    rain_data = RainFall(filename)
    df = rain_data.read_input()
    print(df.head(5))
 
-   #Cleaning data
    print('Dropping unnecessary columns...')
    new_df = rain_data.clean_data()
    print(new_df.head(5), '\n')
 
-   #Data stats
+   print('Basic statistics:')
    rain_data.data_stats()
 
+   print('Number of days:')
+   rain_data.number_days()
+
+   print('Number of rain days:')
+   rain_data.rain_days()
 
 if __name__=="__main__":
     main()
