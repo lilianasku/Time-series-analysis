@@ -1,4 +1,4 @@
-#Stats of time series Auckland rainfall data between 1872 and 1997
+#Plots of time series Auckland rainfall data
 import sys
 import numpy as np
 import pandas as pd

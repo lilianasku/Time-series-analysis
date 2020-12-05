@@ -1,4 +1,4 @@
-#Basic analysis of time series rainfall data
+#Exploratory analysis of time series Auckland rainfall data
 import sys
 import numpy as np
 import pandas as pd
