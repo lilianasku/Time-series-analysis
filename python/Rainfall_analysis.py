@@ -27,7 +27,10 @@ class RainFall(object):
         row_number = self.input_data.shape[0]
         print('Number of rows:', row_number)
         print(self.input_data.describe())
-        self.new_df = self.input_data.drop(columns = ['event_timestamp', 'grade', 'interpol_type'])
+        if 'event_timestamp' and 'grade' and 'interpol_type' in self.input_data.columns:
+           self.new_df = self.input_data.drop(columns = ['event_timestamp', 'grade', 'interpol_type'])
+        else:
+           self.new_df = self.input_data
         return self.new_df
 
     def data_stats(self):
@@ -64,7 +67,11 @@ def main():
 
    rain_data = RainFall(filename)
    df = rain_data.read_input()
-   print(df.head(5))
+   try:
+      print(df.head(5))
+   except(AttributeError, NameError):
+      print('There is no data frame:')
+      sys.exit()
 
    print('Dropping unnecessary columns...')
    new_df = rain_data.clean_data()
