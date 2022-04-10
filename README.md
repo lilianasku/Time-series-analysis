@@ -14,7 +14,11 @@ Notebooks listed:
 <li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_EDA.ipynb"> Exploratory data analysis </a>
 <li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_SeasonalChanges.ipynb"> Seasonal changes </a>
   
-#### 2. Variable stars light curves
+#### 2. Time series analysis of the exchange rates
+  
+  
+  
+#### 3. Variable stars light curves
 
 
 
