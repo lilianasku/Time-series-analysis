@@ -11,7 +11,7 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 
 
 Notebooks listed:
-<li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_EDA.ipynb"> Exploratory data analysis </a>
+<li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/Rainfall_EDA.ipynb"> Exploratory Analysis</a>
 <li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_SeasonalChanges.ipynb"> Seasonal changes </a>
   
 #### 2. Time series analysis of the exchange rates
