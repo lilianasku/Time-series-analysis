@@ -9,10 +9,6 @@ This repository contains Python scripts and notebooks for analysis of Auckland r
 
 The goal of the project is to investigate whether the rainfall dataset is reliable and whether we can use it for time series data modeling. We are trying to answer a question about the accuracy of the predictions for short and long-term variations for this data set. 
 
-
-Notebooks listed:
-<li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/Rainfall_EDA.ipynb"> Exploratory Analysis</a>
-<li> <a href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/RainfallAuckland_SeasonalChanges.ipynb"> Seasonal changes </a>
   
 #### 2. Time series analysis of the exchange rates
   
