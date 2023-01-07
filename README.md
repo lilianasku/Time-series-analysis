@@ -13,8 +13,14 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 #### 2. Time series analysis of the exchange rates
   
 <li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/ExchangeRates.ipynb"> Data analysis of the exchange rates </a>
+
+#### 3. Trade data
   
-#### 3. Variable stars light curves
+<li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/ExchangeRates.ipynb"> Data analysis of the exchange rates </a>
+  
+  
+  
+#### 4. Variable stars light curves
 
 
 
