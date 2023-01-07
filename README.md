@@ -11,7 +11,7 @@ The goal of the project is to investigate whether the rainfall dataset is reliab
 
 <li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/Rainfall_EDA.ipynb"> Exploratory data analysis of rainfall data </a>
   
-<li> <a  href=" https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/Rainfall_SeasonalChanges.ipynb"> Trends and seasonal changes of rainfall data </a>
+<li> <a  href="https://github.com/lilianasku/Time-series-analysis/blob/master/notebooks/Rainfall_SeasonalChanges.ipynb"> Trends and seasonal changes of rainfall data </a>
    
   
 #### 2. Exchange rates
